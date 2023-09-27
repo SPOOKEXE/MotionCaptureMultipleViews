@@ -91,22 +91,22 @@ if __name__ == '__main__':
 		annotated_image = frame.copy()
 
 		# face box
-		if mode == 0 or mode == 1 or mode == 5:
+		if mode == 1 or mode == 2 or mode == 6:
 			result = face_detection.detect( mp_image_raw )
 			annotated_image = face_detection.visualize( annotated_image, result )
 
 		# face mesh
-		if mode == 0 or mode == 2 or mode == 5:
+		if mode == 1 or mode == 3 or mode == 6:
 			result = face_mesh.detect( mp_image_raw )
 			annotated_image = face_mesh.visualize( annotated_image, result )
 
 		# hand mesh
-		if mode == 0 or mode == 3 or mode == 6:
+		if mode == 1 or mode == 4 or mode == 7:
 			result = hand_mesh.detect( mp_image_raw )
 			annotated_image = hand_mesh.visualize( annotated_image, result )
 
 		# pose detection
-		if mode == 0 or mode == 4 or mode == 6:
+		if mode == 1 or mode == 5 or mode == 7:
 			result = pose_tracker.detect( mp_image_raw )
 			annotated_image = pose_tracker.visualize( annotated_image, result )
 
