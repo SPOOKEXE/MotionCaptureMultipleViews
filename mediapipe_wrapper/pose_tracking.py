@@ -1,6 +1,5 @@
 
 import numpy as np
-import mediapipe as mp
 
 from mediapipe import solutions
 from mediapipe.tasks import python

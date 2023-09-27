@@ -1,7 +1,6 @@
 
 import numpy as np
 
-from typing import Any
 from mediapipe import solutions
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision

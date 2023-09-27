@@ -12,6 +12,6 @@ from .models import (
 	ObjectDetectorModels,
 	HandMeshModels,
 	PoseTrackingModels,
+	get_model_filepath,
 	DEFAULT_MODEL_STORE_PATH,
-	get_model_filepath
 )

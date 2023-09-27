@@ -1,7 +1,6 @@
 
 import cv2
 import keyboard
-import mediapipe as mp
 
 from os import path as os_path
 from sys import path as sys_path
