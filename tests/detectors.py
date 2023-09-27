@@ -26,8 +26,6 @@ sys_path.pop()
 
 if __name__ == '__main__':
 
-	CAMERA_RESOLUTION = (720, 480)
-
 	print("Loading Models & Detectors")
 
 	face_detection = FaceDetection( get_model_filepath( FaceDetectionModels.face_detection_short_range ) )
@@ -37,9 +35,12 @@ if __name__ == '__main__':
 
 	print("Finished Loading Models & Detectors")
 
-	vid = cv2.VideoCapture( 0, cv2.CAP_DSHOW )
-	vid.set(cv2.CAP_PROP_FRAME_WIDTH, CAMERA_RESOLUTION[0])
-	vid.set(cv2.CAP_PROP_FRAME_HEIGHT, CAMERA_RESOLUTION[1])
+	# vid = cv2.VideoCapture( 0, cv2.CAP_DSHOW )
+	# vid.set(cv2.CAP_PROP_FRAME_WIDTH, 720)
+	# vid.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+
+	video_filepath = "C:/Users/Declan/Downloads/What Was I Made For_1080p.mp4"
+	vid = cv2.VideoCapture( video_filepath )
 
 	# Switch which detectors are enabled and are visualized
 	# 0 = None
@@ -76,13 +77,14 @@ if __name__ == '__main__':
 		print( modeName )
 	switch_mode( 0 )
 
-	while True:
+	while vid.isOpened():
 		# break loop
 		if keyboard.is_pressed('q'):
 			break
 
 		# raw feed
 		ret, frame = vid.read()
+
 		# cv2.imshow('Raw Feed', frame)
 
 		# annotated feed
